@@ -4,11 +4,12 @@ import { useNavigate } from 'react-router-dom'
 
 const Form: React.FC = () => {
     const [backgroundInformation, setBackgroundInformation] = useState({})
-    const [businessExecutionStatu] = useState([{companyName:'',data:'',state:''},{companyName:'',data:'',state:''}])
+    const [businessExecutionStatu] = useState([{companyName:'',date:'',state:''},{companyName:'',date:'',state:''}])
     const navigate = useNavigate()
 
     const sed = async () => {
         const newdata = businessExecutionStatu.filter(e=>e.state!== '')
+        console.log(newdata);   
         const data = { backgroundInformation, businessExecutionStatu:newdata}
         const rep = await customerInformation.postCompanyData(data)
         const da = await rep.data;
@@ -95,9 +96,9 @@ const Form: React.FC = () => {
                 </div>
                 <div className="col-12">
                     <label className='form-label' htmlFor="">業務執行狀態</label>
-                    <input className='form-control' type="date" onChange={e => businessExecutionStatu[0].data = e.target.value} />
+                    <input className='form-control' type="date" onChange={e => businessExecutionStatu[0].date = e.target.value} />
                     <input className='form-control' type="text" onChange={e => businessExecutionStatu[0].state = e.target.value} />
-                    <input className='form-control' type="date" onChange={e => businessExecutionStatu[1].data = e.target.value} />
+                    <input className='form-control' type="date" onChange={e => businessExecutionStatu[1].date = e.target.value} />
                     <input className='form-control' type="text" onChange={e => businessExecutionStatu[1].state = e.target.value} />
                 </div>
                 <button onClick={sed} className='btn btn-light mt-4'>送出</button>

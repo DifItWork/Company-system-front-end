@@ -11,6 +11,14 @@ const Demo: React.FC = () => {
                     <button className='B'><i className="fa-solid fa-plus pe-2"></i>Create customer</button>
                 </div>
             </div>
+            <div className='tour'>
+                <div className='inp'>
+                    <i className="fa-solid fa-magnifying-glass"></i>
+                    <input type='search' placeholder='Search anything...'/>
+                    <i className="fa-solid fa-sliders"></i>
+                </div>
+                <div className='sel'></div>
+            </div>
         </div>
     )
 }

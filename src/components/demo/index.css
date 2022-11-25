@@ -1,4 +1,4 @@
-.formHome{
+.formHome {
     padding: 20px;
 }
 
@@ -10,16 +10,17 @@
 .formHome .title {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
+    margin: 20px 0;
 }
 
 .formHome .title .text {
     color: black;
     font-weight: bolder;
-    font-size: 30px;
+    font-size: 35px;
 }
 
-.formHome .title .butn .E{
+.formHome .title .butn .E {
     border: 1px solid rgb(121, 121, 121);
     border-radius: 10px;
     padding: 5px 10px;
@@ -27,15 +28,64 @@
     transition: ease 0.5s;
 }
 
-.formHome .title .butn .E:hover{
+.formHome .title .butn .E:hover {
     color: white;
     background-color: green;
 }
 
-.formHome .title .butn .B{
+.formHome .title .butn .B {
     border: 1px solid rgb(121, 121, 121);
     border-radius: 10px;
     padding: 5px 10px;
+    font-weight: bolder;
     color: white;
     background-color: rgb(4, 56, 228);
+    transition: ease 0.5s;
+}
+
+.formHome .title .butn .B:hover {
+    color: rgb(4, 56, 228);
+    background-color: white;
+}
+
+.formHome .tour {
+    background-color: rgb(235, 235, 235);
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.formHome .tour .inp {
+    position: relative;
+    width: 300px;
+    height: 60px;
+}
+
+.formHome .tour .inp .fa-magnifying-glass {
+    position: absolute;
+    top: 20px;
+    left: 5px;
+    z-index: 99;
+    font-size: 20px;
+    color: rgb(49, 49, 49);
+}
+
+.formHome .tour .inp .fa-sliders {
+    position: absolute;
+    top: 25px;
+    right: 5px;
+    z-index: 99;
+}
+
+.formHome .tour .inp input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 1px solid rgb(160, 160, 160);
+    outline: none;
+    padding-left: 40px;
+}
+
+.formHome .tour .inp input:focus::-webkit-input-placeholder{
+    opacity: 0;
 }
