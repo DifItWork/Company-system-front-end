@@ -59,36 +59,22 @@
 
 .formHome .tour .inp {
     position: relative;
-    width: 400px;
-    height: 60px;
 }
 
 .formHome .tour .inp .fa-magnifying-glass {
     position: absolute;
-    top: 20px;
+    top: 13px;
     left: 10px;
     z-index: 99;
     font-size: 20px;
     color: rgb(75, 75, 75);
 }
 
-.formHome .tour .inp .fa-sliders {
-    position: absolute;
-    top: 20px;
-    right: 10px;
-    z-index: 99;
-    font-size: 20px;
-    color: rgb(148, 148, 148);
-}
-
 .formHome .tour .inp input {
-    position: absolute;
-    width: 100%;
-    height: 100%;
     border-radius: 20px;
     border: 1px solid rgb(197, 197, 197);
     outline: none;
-    padding: 0 40px;
+    padding: 10px 10px 10px 40px;
 }
 
 .formHome .tour .inp input::-webkit-input-placeholder {
@@ -96,30 +82,71 @@
     color: rgb(172, 172, 172);
 }
 
-.formHome .tour .inp input::-webkit-search-cancel-button,
+.formHome .tour .inp input::-webkit-search-cancel-button {
+    font-size: larger;
+    cursor: pointer;
+}
+
 .formHome .tour .inp input:focus::-webkit-input-placeholder {
     opacity: 0;
 }
 
 .formHome .tour .sels .sel {
     position: relative;
-    width: 100px;
-    height: 30px;
+    margin: 10px 10px 10px 20px;
 }
 
-.formHome .tour .sels .sel i {
+
+.formHome .tour .sels i {
     position: absolute;
-    z-index: 99;
     top: 9px;
     left: 6px;
 }
 
 .formHome .tour .sels .sel select {
-    position: absolute;
-    padding: 5px 10px 5px 20px;
+    padding: 5px 10px 5px 30px;
     background-color: rgba(238, 238, 238, 0.507);
     outline: none;
     border: 1px solid rgb(197, 197, 197);
     border-radius: 10px;
     font-weight: bolder;
+}
+
+.formHome .nave {
+    border-bottom: 1px solid rgb(177, 177, 177);
+    padding-bottom: 10px;
+}
+
+.formHome .nave .customers {
+    font-weight: bolder;
+    padding-bottom: 10px;
+    color: blue;
+    border-bottom: 3px solid blue;
+}
+
+.formHome .nave .nb {
+    border-radius: 5px;
+    color: white;
+    background-color: orange;
+    margin-left: 10px;
+    padding: 0 6px;
+}
+
+.form table {
+    width: 100%;
+}
+
+.form table thead tr{
+    background-color: rgba(238, 238, 238, 0.404);
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 3px 3px 6px;
+}
+
+.form table thead tr th{
+    padding: 10px 0;
+    color: rgb(126, 126, 126);
+}
+
+.form table thead tr th i {
+    font-size: small;
 }
