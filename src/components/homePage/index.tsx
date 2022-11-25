@@ -60,7 +60,7 @@ export default function HomePage() {
                 <td>{todo.backgroundInformation.email}</td>
                 <td>{todo.backgroundInformation.companyUrl}</td>
                 <td>{todo.backgroundInformation.industryType}</td>
-                <td>
+                <td className='text-start'>
                   <ul>
                     {
                       todo.businessExecutionStatuDto && todo.businessExecutionStatuDto.map((item: any, i: any) => {

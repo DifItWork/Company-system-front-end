@@ -1,18 +1,22 @@
 import React, { useState } from 'react'
 import customerInformation from '../../server/customerInformation'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Form: React.FC = () => {
     const [backgroundInformation, setBackgroundInformation] = useState({})
-    const [businessExecutionStatu, setBusinessExecutionStatu] = useState([{}])
+    const [businessExecutionStatu] = useState([{companyName:'',data:'',state:''},{companyName:'',data:'',state:''}])
     const navigate = useNavigate()
-    const sed =async() =>{
-        const data = {backgroundInformation,businessExecutionStatu}
-        const rep =await customerInformation.postCompanyData(data)
+
+    const sed = async () => {
+        const newdata = businessExecutionStatu.filter(e=>e.state!== '')
+        const data = { backgroundInformation, businessExecutionStatu:newdata}
+        const rep = await customerInformation.postCompanyData(data)
         const da = await rep.data;
-        if(da)navigate('/')
+        if (da) navigate('/')
         else alert('不能有空格')
     }
+  
+
     return (
         <div className='container'>
             <div className='row mt-3'>
@@ -44,13 +48,14 @@ const Form: React.FC = () => {
                     <label className='form-label' htmlFor="">公司名稱</label>
                     <input onChange={e => {
                         setBackgroundInformation({ ...backgroundInformation, companyName: e.target.value })
-                        setBusinessExecutionStatu([{ ...businessExecutionStatu[0], companyName: e.target.value }])
+                        businessExecutionStatu[0].companyName = e.target.value;
+                        businessExecutionStatu[1].companyName = e.target.value
                     }
                     } className='form-control' type="text" />
                 </div>
                 <div className="col-6">
                     <label className='form-label' htmlFor="">公司電話</label>
-                    <input onChange={e => setBackgroundInformation({ ...backgroundInformation, compantPhone: e.target.value})} className='form-control' type="phone" />
+                    <input onChange={e => setBackgroundInformation({ ...backgroundInformation, compantPhone: e.target.value })} className='form-control' type="phone" />
                 </div>
                 <div className="col-6">
                     <label className='form-label' htmlFor="">姓名</label>
@@ -90,8 +95,10 @@ const Form: React.FC = () => {
                 </div>
                 <div className="col-12">
                     <label className='form-label' htmlFor="">業務執行狀態</label>
-                    <input className='form-control' type="date" onChange={e => setBusinessExecutionStatu([{ ...businessExecutionStatu[0], date: e.target.value }])} />
-                    <input className='form-control' type="text" onChange={e => setBusinessExecutionStatu([{ ...businessExecutionStatu[0], state: e.target.value }])} />
+                    <input className='form-control' type="date" onChange={e => businessExecutionStatu[0].data = e.target.value} />
+                    <input className='form-control' type="text" onChange={e => businessExecutionStatu[0].state = e.target.value} />
+                    <input className='form-control' type="date" onChange={e => businessExecutionStatu[1].data = e.target.value} />
+                    <input className='form-control' type="text" onChange={e => businessExecutionStatu[1].state = e.target.value} />
                 </div>
                 <button onClick={sed} className='btn btn-light mt-4'>送出</button>
             </div>

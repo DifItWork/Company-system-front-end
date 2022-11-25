@@ -1,0 +1,41 @@
+.formHome{
+    padding: 20px;
+}
+
+.formHome .label {
+    color: rgb(100, 100, 100);
+    font-weight: bolder;
+}
+
+.formHome .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.formHome .title .text {
+    color: black;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.formHome .title .butn .E{
+    border: 1px solid rgb(121, 121, 121);
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: white;
+    transition: ease 0.5s;
+}
+
+.formHome .title .butn .E:hover{
+    color: white;
+    background-color: green;
+}
+
+.formHome .title .butn .B{
+    border: 1px solid rgb(121, 121, 121);
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: white;
+    background-color: rgb(4, 56, 228);
+}
