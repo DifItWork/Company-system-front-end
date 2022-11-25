@@ -14,10 +14,17 @@ const Demo: React.FC = () => {
             <div className='tour'>
                 <div className='inp'>
                     <i className="fa-solid fa-magnifying-glass"></i>
-                    <input type='search' placeholder='Search anything...'/>
+                    <input type='search' placeholder='Search anything...' />
                     <i className="fa-solid fa-sliders"></i>
                 </div>
-                <div className='sel'></div>
+                <div className='sels'>
+                    <div className='sel'>
+                        <i className="fa-solid fa-calendar"></i>
+                        <select id="year">
+                            <option value="2020">2020年</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
     )
