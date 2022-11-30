@@ -8,6 +8,8 @@ export const DemoContextProvider = (prop: any) => {
         const rep = await customerInformation.getCompanyData()
         const data = await rep.data
         setMaterial(data)
+        console.log('a');
+        
     }
     useEffect(() => {
         const featch = async () => {
