@@ -16,7 +16,18 @@ class customerInformation {
     postCompanyStatu(data: object) {
         return axios.post(COMPANT_API_DATA + 'Crm/insertChildProfile', data)
     }
-    //刪除工作狀態
+    //修改員工資料
+    updataCompanyData(data:object){
+        return axios.put(COMPANT_API_DATA+'Crm/updateData',data)
+    }
+    //刪除整筆資料
+    deleteCompanyData(id:any){
+        return axios.delete(COMPANT_API_DATA+`Crm/deleteData/${id}`)
+    }
+    //刪除單筆
+    deleteCompanyStatu(id:any){
+        return axios.delete(COMPANT_API_DATA+`Crm/deleteChildData/${id}`)
+    }
 }
 
 export default new customerInformation()

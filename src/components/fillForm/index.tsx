@@ -112,7 +112,7 @@ const Form: React.FC = () => {
                             <input required type="date" onChange={e => businessExecutionStatu[1].date = e.target.value} />
                             <input required type="text" onChange={e => businessExecutionStatu[1].state = e.target.value} placeholder='當天業務狀況.....' />
                         </div>
-                        <button onClick={sed} className='mt-4 btu'>送出</button>
+                        <button onClick={sed} className='mt-4 btu'>Send Out</button>
                         <ToastContainer />
                     </div>
                 </div>

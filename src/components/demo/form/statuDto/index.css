@@ -53,3 +53,35 @@
     font-weight: bolder;
     transition: 0.5s ease-in-out;
 }
+
+.rounded .title-mod button{
+    background-color: rgb(255, 255, 255);
+    padding: 3px 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(189, 189, 189);
+    font-size: 17px;
+    outline: none;
+    font-weight: bolder;
+}
+
+.rounded .title-mod button:hover{
+  background-color: rgb(240, 240, 240);
+  border: 1px solid rgb(105, 105, 105);
+}
+
+.rounded ul button{
+    outline: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: rgb(87, 87, 87);
+    padding: 0 10px;
+    margin-left: 10px;
+    font-weight: bolder;
+}
+
+.rounded ul button:hover{
+    background: black;
+    transition: ease 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 1px 1px 3px;
+}

@@ -1,7 +1,9 @@
 .formHome {
     padding: 20px 20px 0;
     min-height: 100vh;
-    background-color: rgba(230, 230, 230, 0.315);
+    background-color: rgba(230, 230, 230, 0.233);
+    /* background:no-repeat center url('../../img/bg4.jpg');
+    background-size: cover; */
 }
 
 .formHome .label {
@@ -139,13 +141,13 @@
 }
 
 .formHome .form table thead tr {
-    background: linear-gradient(90deg, rgba(199, 199, 199, 0.3) 0%, rgba(253, 253, 253, 0.1) 50%, rgba(226, 226, 226, 0.8) 100%);
-    border-radius: 30px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 3px 3px 6px;
+    background: linear-gradient(90deg, rgba(175, 175, 175, 0.123) 0%, rgba(216, 216, 216, 0.63) 50%, rgb(226, 226, 226) 100%);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 1px 1px 3px;
 }
 
 .formHome .form table thead tr th {
-    padding: 10px 10px;
+    padding: 10px 5px;
     color: rgb(129, 129, 129);
 }
 
@@ -154,19 +156,19 @@
 }
 
 .formHome .form th:nth-child(1) {
-    border-radius: 20px 0px 0px 20px;
+    border-radius: 10px 0px 0px 10px;
 }
 
 .formHome .form th:nth-last-child(1) {
-    border-radius: 0px 20px 20px 0px;
+    border-radius: 0px 10px 10px 0px;
 }
 
 .formHome .form td:nth-child(1) {
-    border-radius: 30px 0px 0px 30px;
+    border-radius: 20px 0px 0px 20px;
 }
 
 .formHome .form td:nth-last-child(1) {
-    border-radius: 0px 30px 30px 0px;
+    border-radius: 0px 20px 20px 0px;
 }
 
 .formHome .form table tbody tr:hover {
@@ -181,12 +183,19 @@
     height: 100px;
 }
 
-.formHome .form tbody tr:nth-child(2n) {
-    background: #63d5f127;
+.formHome .form tbody tr td button {
+   border: none;
+   background-color: rgba(70, 70, 70, 0.767);
+   border-radius: 5px;
+   color: white;
 }
+.formHome .form tbody tr td button:hover i {
+    transform: rotate(36deg);
+    transition: 0.5s;
+ }
 
 .formHome .form tbody tr {
-    border-radius: 40px;
+    border-radius: 20px;
 }
 
 .formHome .form tbody tr .No {
