@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react'
 import ReactPaginate from 'react-paginate'
 import Statu from './statuDto'
 import customerInformation from '../../../server/customerInformation'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 interface Iprop {
     data: any
     reget: Function
@@ -40,6 +42,8 @@ const Form: React.FC<Iprop> = ({ data, reget }) => {
     const [itemOffset, setItemOffset] = useState(0);
     const [show, setShow] = useState<boolean>(false);
     const [object, setObject] = useState({});
+    const [open, setOpen] = useState(false);
+    const [id, setId] = useState();
     const itemsPerPage = 5;
     useEffect(() => {
         if (data) {
@@ -62,25 +66,39 @@ const Form: React.FC<Iprop> = ({ data, reget }) => {
         setItemOffset(newOffset);
     }
 
-    const delet = (id: number) => {
-        toast.error('正在刪除資料', {
-            position: "top-center",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-        })
-        setTimeout(() => {
-            customerInformation.deleteCompanyData(id).then(
-                () => {
-                    reget()
-                }
-            )
-        }, 2500)
+    const delet = ( ) => {
+        customerInformation.deleteCompanyData(id).then(
+            () => {
+                reget()
+                setOpen(false)
+            }
+        )
     }
+
+    const handleClick = (id: any) => {
+        setId(id);
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const action = (
+        <React.Fragment >
+            <Button color="inherit" size="small" onClick={delet}>
+                UNDO
+            </Button>
+            <IconButton
+                size="small"
+                aria-label="close"
+                color="inherit"
+                onClick={handleClose}
+            >
+                <CloseIcon fontSize="small" />
+            </IconButton>
+        </React.Fragment>
+    );
     return (
         <>
             <table>
@@ -126,7 +144,7 @@ const Form: React.FC<Iprop> = ({ data, reget }) => {
                                 <td onClick={() => statu(todo)} className='Name'>{todo.backgroundInformation.employeeName}</td>
                                 <td onClick={() => statu(todo)} className='JobTitle'>{todo.backgroundInformation.position}</td>
                                 <td className='Remark'>{todo.backgroundInformation.remark}</td>
-                                <td><button onClick={() => delet(todo.backgroundInformation.id)}><i className="fa-sharp fa-solid fa-trash-can"></i></button></td>
+                                <td><button onClick={() => handleClick(todo.backgroundInformation.id)}><i className="fa-sharp fa-solid fa-trash-can"></i></button></td>
                             </tr>
                         })
                     }
@@ -150,7 +168,15 @@ const Form: React.FC<Iprop> = ({ data, reget }) => {
                 />
                 <span className='remark'>items per page {pageCount}</span>
             </div>
-            <ToastContainer />
+
+            <Snackbar
+                anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                open={open}
+                autoHideDuration={6000}
+                onClose={handleClose}
+                message="Confirm Deletion"
+                action={action}
+            />
             <Statu show={show} setShow={setShow} object={object} reget={reget} />
         </>
 

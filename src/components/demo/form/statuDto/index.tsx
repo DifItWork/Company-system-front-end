@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Modal } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+
 import customerInformation from '../../../../server/customerInformation'
 import './index.css'
 interface prop {
